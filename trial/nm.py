@@ -12,8 +12,8 @@ import qrcode
 from PIL import Image
 
 # Replace with your own values
-CLIENT_SECRET_FILE = r"C:\Users\Ranu Ramesh\Desktop\trial\client_secret.json"
-FROM_EMAIL = 'itsraaanuuu@gmail.com'
+CLIENT_SECRET_FILE = r"your file directory"
+FROM_EMAIL = 'your mail'
 
 # Load credentials from file
 flow = InstalledAppFlow.from_client_secrets_file(
@@ -68,6 +68,6 @@ for index, row in df.iterrows():
     qr_filename = f"{name}_{reg_no}.png"
     qr_data = f"Name: {name}, RegNo: {reg_no}"
     generate_qr_code(qr_data, qr_filename)
-    subject = f"Your QR Code for the CodeCraft Event, {name}"
-    body = f"Dear {name},\n\nPlease find your QR code attached. Use it for attendance during the event. See ya there.\n\nBest regards,\n Ranusha Ramesh\nEvent Organiser"
+    subject = f"Your QR Code for the  Event, {name}"
+    body = f"Dear {name},\n\nPlease find your QR code attached. Use it for attendance during the event. See ya there.\n\nBest regards,\n \nEvent Organiser"
     send_email(email, subject, body, qr_filename)
